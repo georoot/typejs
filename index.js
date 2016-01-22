@@ -48,7 +48,3 @@ typejs.prototype.delWord = function(clb) {
 		clb();
 	}
 };
-
-var w = new typejs("consoleContent");
-w.setSpeed(200);
-w.append("hello typejs!",function(){console.log("task done");});
