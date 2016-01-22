@@ -34,9 +34,16 @@ typejs.prototype.flush = function() {
 	this.console.innerHTML = "";
 };
 
-
+typejs.prototype.delWord = function() {
+	var currentText = this.console.innerHTML;
+	var currentInstance = this;
+	if(currentText.charAt(currentText.length-1) != " "){
+		this.console.innerHTML = this.console.innerHTML.substr(0,this.console.innerHTML.length-1);
+		setTimeout(function(){currentInstance.delWord();},currentInstance.operationSpeed);
+	}	
+};
 
 var w = new typejs("consoleContent");
 w.setSpeed(200);
 //w.append("hello typejs!");
-w.flush();
+w.delWord();
