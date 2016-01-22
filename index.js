@@ -21,6 +21,18 @@ typejs.prototype.append = function(data) {
 	}
 };
 
+typejs.prototype.clear = function() {
+	var currentText = this.console.innerHTML;
+	var currentInstance = this;
+	if(currentText.length > 0){
+		this.console.innerHTML = this.console.innerHTML.substr(0,this.console.innerHTML.length-1);
+		setTimeout(function(){currentInstance.clear();},currentInstance.operationSpeed);
+	}
+};
+
+
+
 var w = new typejs("consoleContent");
 w.setSpeed(200);
-w.append("hello typejs!");
+//w.append("hello typejs!");
+w.clear();
