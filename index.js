@@ -30,9 +30,13 @@ typejs.prototype.clear = function() {
 	}
 };
 
+typejs.prototype.flush = function() {
+	this.console.innerHTML = "";
+};
+
 
 
 var w = new typejs("consoleContent");
 w.setSpeed(200);
 //w.append("hello typejs!");
-w.clear();
+w.flush();
